@@ -1,0 +1,22 @@
+.addProduct{
+    text-align: center;
+    margin-top: 20px;
+}
+.form input,textarea{
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,.5);
+}
+.form-btn{
+  width: 150px !important;
+  padding: .5em 1em !important;
+    background-color: rgb(116, 207, 56);
+    color: white;
+}
+.form-btn:hover{
+    background-color: rgb(70, 134, 28); 
+}

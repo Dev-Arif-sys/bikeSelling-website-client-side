@@ -1,0 +1,33 @@
+.logo{
+    font-weight: 800;
+    font-size: 2rem;
+    color: rgb(36, 18, 18);
+}
+.logo-part{
+    color: rgb(11, 190, 50);
+}
+.navItem{
+    font-weight: bold !important;
+}
+
+.sign-btn{
+    background-color: rgb(11, 190, 50);
+    color: white !important;
+    border-radius: 20px;
+    padding: .5em 1.4em !important;
+    outline: none;
+    border: none;
+}
+.userName{
+    color: rgb(96, 102, 14);
+   
+    background-color: white;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    display: inline-block;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.5);
+}
+.sign-btn:hover{
+    background-color: rgb(25, 110, 25);
+}

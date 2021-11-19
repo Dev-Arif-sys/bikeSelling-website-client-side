@@ -1,0 +1,56 @@
+.banner{
+    background-image:linear-gradient(to bottom, rgba(5, 13, 46, 0.7), rgba(3, 36, 31, 0.7)),
+    url('https://i.ibb.co/Sw8WF2d/bike-banner.jpg');
+    height: 95vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.custom-container{
+    width: 90%;
+    margin: 0 auto;
+}
+.banner-header{
+    font-size: 5rem;
+    font-weight: 700;
+    color: white;
+    width: 70%;
+    
+}
+.banner-sub-header{
+    font-size: 1.3rem;
+    color: #d8c7c6;
+    font-weight: 300;
+    
+}
+
+.banner-btn{
+    padding: .7rem 2.4rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    background-color: #F56960;
+    color: white;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    transition: .3s background-color;
+}
+.banner-btn:hover{
+    background-color: slateblue;
+}
+
+@media  only screen and (max-width:768px) {
+    .banner{
+        height: 50%;
+        padding: 20px 0
+    }
+    .banner-header{ width: 100%;
+        font-size: 2.3rem;
+    }
+    .banner-sub-header{
+        font-size: 1.3rem;
+    }
+    .banner-btn{
+        padding: .4em 1.5em;
+    }
+}

@@ -1,0 +1,11 @@
+.review-slider{
+    background-color: blue;
+}
+
+.slickk-arrow{
+    color: black !important;
+}
+.slickPrev,
+.slickNext{
+    color: black !important;  
+}

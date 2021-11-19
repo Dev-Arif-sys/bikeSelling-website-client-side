@@ -1,0 +1,39 @@
+.custom-card{
+    width: 450px;
+    max-width: 90%;
+    background-color: rgb(235, 239, 243);
+    padding: 20px;
+  
+    border-radius: 10px;
+    transition: .3s box-shadow;
+    margin: 0 auto;
+}
+.custom-card:hover{
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.3);
+}
+.custom-card .image{
+    text-align: center;
+}
+.custom-card img{
+    width: 350px;
+    height: 250px;
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.price{
+    color: rgb(24, 223, 17);
+}
+.viewMore{
+    background: none;
+    border: none;
+    color: brown;
+    font-size: 1.1rem;
+    transition: .4s letter-spacing;
+}
+.section-heading{
+    color: rgb(3, 28, 73);
+}
+.viewMore:hover{
+    letter-spacing: 2px;
+}

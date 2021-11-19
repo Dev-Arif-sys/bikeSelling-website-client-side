@@ -1,0 +1,24 @@
+.signin{
+    background-image:linear-gradient(to bottom, rgba(5, 13, 46, 0.7), rgba(3, 36, 31, 0.7)),
+    url('https://i.ibb.co/k5TcxCB/conor-luddy-HKF3-K2-RT0-KE-unsplash.jpg');
+    height: 110vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.form{
+    width: 550px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.createAccount Link{
+  text-decoration: none;
+  color: white;
+}
+
+@media only screen and (max-width:768px) {
+    .form{
+        width: 100%;
+    }
+}

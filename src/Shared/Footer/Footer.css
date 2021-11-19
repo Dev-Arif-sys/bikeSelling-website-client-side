@@ -1,0 +1,33 @@
+.footer-container{
+    
+
+    margin-top: auto;
+}
+.footer{
+   background-color: #e5e1ee;
+  
+   padding: 30px;
+   padding-top: 50px;
+  
+  
+    /* Height of the footer */
+
+   text-align: left;
+  
+
+ 
+}
+.presence ul{
+  list-style:none ;
+}
+.presence a{
+   text-decoration: none;
+   color: rgb(2, 5, 37);
+}
+.presence li{
+   transition: .3s letter-spacing;
+}
+
+.presence a:hover{
+   color:#dc3d4b ;
+}
