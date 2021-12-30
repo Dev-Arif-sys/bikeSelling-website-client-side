@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect, Route } from 'react-router';
+import { Redirect, Route,Navigate,useLocation } from 'react-router';
 import UseAuth from '../hooks/UseAuth';
 import Loading from '../Shared/Loading/Loading';
 
@@ -8,6 +8,7 @@ import Loading from '../Shared/Loading/Loading';
 
 const PrivateRoute = ({children,...rest}) => {
      const {user,isLoading}=UseAuth()
+     const location= useLocation()
     
      if(isLoading){
          return(
@@ -17,25 +18,9 @@ const PrivateRoute = ({children,...rest}) => {
          )
      }
    
-    return (
-        <Route
-        {...rest}
-        render={({ location }) =>
-          user?.email ? (
-            children
-          ) : (
-            <Redirect
-              to={{
-                pathname: "/login",
-                state: { from: location }
-              }}
-            />
-          )
-        }
-      />
-           
+
+     return user?.email ? children : <Navigate to='/login' state={{from:location}} />
     
-    );
 };
 
 export default PrivateRoute;

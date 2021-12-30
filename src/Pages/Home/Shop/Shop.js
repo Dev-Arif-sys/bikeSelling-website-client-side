@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import UseAuth from '../../../hooks/UseAuth';
 import Loading from '../../../Shared/Loading/Loading';
 import Navigation from '../../../Shared/Navigation/Navigation';
@@ -23,11 +23,11 @@ const Shop = () => {
             })
     }, [])
 
-    const history=useHistory()
+    const navigate=useNavigate()
 
     const handleBuyNow=(id)=>{
         setIsLoading(false)
-     history.push(`bikes/${id}`)
+     navigate(`bikes/${id}`)
     }
 
     return (

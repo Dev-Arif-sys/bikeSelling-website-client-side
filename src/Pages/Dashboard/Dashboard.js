@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { NavLink,useRouteMatch,Switch,Route, Link } from 'react-router-dom';
+import { NavLink,Switch,Route, Link, Outlet, Routes } from 'react-router-dom';
 import UseAuth from '../../hooks/UseAuth';
 import AdminRoute from '../../PrivateRoute/AdminRoute';
 import AddProduct from './AddProduct/AddProduct';
@@ -13,9 +13,12 @@ import Payment from './Payment/Payment';
 import ReviewsAdd from './ReviewsAdd/ReviewsAdd';
 
 
+
+
+
 const Dashboard = () => {
     const [addClass,setAddClass]=useState(false)
-    let { path, url } = useRouteMatch();
+  
     const {admin,logOut,user}=UseAuth()
     const handleToggle=()=>{
            setAddClass(!addClass)
@@ -40,7 +43,7 @@ const Dashboard = () => {
     fontWeight: "bold",
     color: "red"
   }}
- className='navLink' to={`${url}/manageOrders`}>
+ className='navLink' to={`/dashboard/manageOrders`}>
                 <p className="list-group-item
                  list-group-item-action bg-transparent second-text fw-bold "><i
                         className="fas fa-tachometer-alt me-2"></i>Manage All Orders</p>
@@ -50,7 +53,7 @@ const Dashboard = () => {
     fontWeight: "bold",
     color: "red"
   }}
- className='navLink'  to={`${url}/addProduct`}>
+ className='navLink'  to={`/dashboard/addProduct`}>
                 <p className="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         className="fas fa-project-diagram me-2"></i>Add A Product</p>
                          </NavLink>
@@ -58,7 +61,7 @@ const Dashboard = () => {
     fontWeight: "bold",
     color: "red"
   }}
- className='navLink' to={`${url}/makeAdmin`}>    
+ className='navLink' to={`/dashboard/makeAdmin`}>    
                 <p className="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                     className="fas fa-user-secret me-2"></i>Make Admin</p>
                         </NavLink>
@@ -67,7 +70,7 @@ const Dashboard = () => {
     fontWeight: "bold",
     color: "red"
   }}
- className='navLink' to={`${url}/ManageProducts`}>    
+ className='navLink' to={`/dashboard/ManageProducts`}>    
                 <p  className="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         className="fas fa-paperclip me-2"></i>Manage Products</p>
                         </NavLink> </div>  :     <div>
@@ -75,7 +78,7 @@ const Dashboard = () => {
     fontWeight: "bold",
     color: "red"
   }}
- className='navLink'  to={`${url}`}>
+ className='navLink'  to={`/dashboard`}>
                 <p className="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                
                         <i
@@ -87,7 +90,7 @@ const Dashboard = () => {
     fontWeight: "bold",
     color: "red"
   }}
- className='navLink'  to={`${url}/payment`}>
+ className='navLink'  to={`/dashboard/payment`}>
                 <p className="list-group-item list-group-item-action bg-transparent second-text fw-bold ">
                
                 <i className="fas fa-money-bill-wave-alt me-2"></i>Payment</p>
@@ -98,7 +101,7 @@ const Dashboard = () => {
     fontWeight: "bold",
     color: "red"
   }}
- className='navLink'  to={`${url}/reviews`}>
+ className='navLink'  to={`/dashboard/reviews`}>
                 <p className="list-group-item list-group-item-action bg-transparent second-text fw-bold ">
                
                 <i className="fas fa-star-half-alt me-2"></i>Reviews</p>
@@ -132,36 +135,9 @@ const Dashboard = () => {
     </Nav>
     </Container>
   </Navbar>
-  <Switch>
-    {
-      admin ? <AdminRoute exact  path={`${path}`}>
-      <ManageAllOrder></ManageAllOrder>
-      </AdminRoute> : <Route exact  path={`${path}`}>
-      <MyOrders></MyOrders>
-       </Route>
-    }
-
-     
   
-        <Route  path={`${path}/reviews`}>
-       <ReviewsAdd></ReviewsAdd>
-        </Route>
-        <Route  path={`${path}/payment`}>
-       <Payment></Payment>
-        </Route>
-        <AdminRoute  path={`${path}/manageOrders`}>
-        <ManageAllOrder></ManageAllOrder>
-        </AdminRoute>
-        <AdminRoute path={`${path}/addProduct`}>
-          <AddProduct></AddProduct>
-        </AdminRoute>
-        <AdminRoute path={`${path}/makeAdmin`}>
-          <MakeAdmin></MakeAdmin>
-        </AdminRoute>
-        <AdminRoute path={`${path}/manageProducts`}>
-          <ManageProducts></ManageProducts>
-        </AdminRoute>
-      </Switch>
+
+ <Outlet></Outlet>
    
                 
            

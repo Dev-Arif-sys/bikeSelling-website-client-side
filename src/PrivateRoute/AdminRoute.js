@@ -1,27 +1,14 @@
 import React from 'react';
-import { Redirect, Route } from 'react-router';
+import { Redirect, Route,Navigate,useLocation } from 'react-router';
 import UseAuth from '../hooks/UseAuth';
 
 
 const AdminRoute = ({children,...rest}) => {
     const {user,admin}=UseAuth()
-    return (
-        <Route
-      {...rest}
-      render={({ location }) =>
-        user.email && admin ? (
-          children
-        ) : (
-          <Redirect
-            to={{
-              pathname: "/",
-              state: { from: location }
-            }}
-          />
-        )
-      }
-    />
-    );
+    const location=useLocation()
+
+    return user?.email && admin ? children :<Navigate to='/' state={{from:location}} />
+    
 };
 
 export default AdminRoute;

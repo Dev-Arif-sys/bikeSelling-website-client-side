@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ButtonGroup, Form, Button, Row, Col, Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import UseAuth from '../../hooks/UseAuth';
 import Footer from '../../Shared/Footer/Footer';
 import Navigation from '../../Shared/Navigation/Navigation';
@@ -10,7 +10,7 @@ const Register = () => {
     const { SignInWithGoogle,registerUser,error } = UseAuth();
     const [registerData,setRegisterData]=useState({})
     const [notMatched,setNotMatched]=useState(false)
-    const history=useHistory()
+    const navigate=useNavigate()
     const HandleOnBlur=(e)=>{
         const field=e.target.name
         const value=e.target.value
@@ -27,7 +27,7 @@ const Register = () => {
             return
         }else{
             setNotMatched(false)
-            registerUser(registerData.name,registerData.email,registerData.password,history)
+            registerUser(registerData.name,registerData.email,registerData.password,navigate)
            
         } 
        

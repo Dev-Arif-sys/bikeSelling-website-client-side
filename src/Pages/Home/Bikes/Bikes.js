@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import UseAuth from '../../../hooks/UseAuth';
 import Loading from '../../../Shared/Loading/Loading';
 import './Bikes.css'
@@ -9,6 +9,7 @@ const Bikes = () => {
     const [bikes,setBikes]=useState(null);
     const [loading,setLoading]=useState(false)
     const {setIsLoading}=UseAuth()
+    const navigate=useNavigate()
     useEffect(()=>{
         setLoading(true)
         fetch('https://sheltered-beyond-04487.herokuapp.com/bikes')
@@ -23,11 +24,11 @@ const Bikes = () => {
     },[])
 
     
-const history=useHistory()
+
 
     const handleBuyNow=(id)=>{
         setIsLoading(false)
-     history.push(`bikes/${id}`)
+     navigate(`bikes/${id}`)
     }
   
    

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ButtonGroup, Form, Button, Row, Col, Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { useLocation,useHistory } from 'react-router';
+import { useLocation,useNavigate } from 'react-router';
 import UseAuth from '../../hooks/UseAuth';
 import Footer from '../../Shared/Footer/Footer';
 import Navigation from '../../Shared/Navigation/Navigation';
@@ -10,9 +10,10 @@ import './Login.css'
 const Login = () => {
     const { SignInWithGoogle,loginUser,error} = UseAuth();
     const [loginData,setLoginData]=useState({})
+    const navigate=useNavigate()
     const location=useLocation()
     const redirect_URI=location?.state?.from || '/home'
-    const history=useHistory()
+    
 
     const HandleOnBlur=(e)=>{
         const field=e.target.name
@@ -25,7 +26,7 @@ const Login = () => {
     const handleOnSubmit=(e)=>{
         e.preventDefault()
         
-        loginUser(loginData.email,loginData.password,history,redirect_URI)
+        loginUser(loginData.email,loginData.password,navigate,redirect_URI)
        
     }
     return (
@@ -74,7 +75,7 @@ const Login = () => {
                                  new here? Create an account
                              </Link>
                          </div>
-                       <div className='text-center mt-5'><button onClick={()=>{SignInWithGoogle(history,redirect_URI)}} className='banner-btn'>google sign in</button></div>
+                       <div className='text-center mt-5'><button onClick={()=>{SignInWithGoogle(navigate,redirect_URI)}} className='banner-btn'>google sign in</button></div>
                    </div>
                
                </div>
